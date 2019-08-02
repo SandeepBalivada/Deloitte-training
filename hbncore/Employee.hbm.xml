@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.Employee" table="EMPLOYEE">
+		<!-- <cache usage="read-only"/>  -->
+			<id name="empId">
+				<generator class="assigned"></generator>
+			</id>
+			<property name="empName" length="20"></property> 
+	</class>
+</hibernate-mapping>

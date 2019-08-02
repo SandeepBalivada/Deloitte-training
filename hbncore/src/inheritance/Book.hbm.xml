@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="inheritance.Book" table="BOOK" discriminator-value="NO-OFFER">
+			<id name="bookid">
+				<generator class="assigned"></generator>
+			</id>
+			<discriminator column="BOOKTYPE" type="string" length="15"></discriminator>
+			<property name="title" length="20"></property> 
+			<property name="author" length="20"></property>
+			<property name="price"></property>
+			
+			<subclass name="inheritance.JavaBook" discriminator-value="JAVA">
+			  <property name="discount"></property>
+			</subclass>
+			
+			<subclass name="inheritance.DotnetBook" discriminator-value="DOTNET">
+			   <property name="cds"></property>
+			</subclass>
+	</class>
+</hibernate-mapping>
